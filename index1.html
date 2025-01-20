@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+        }
+        button {
+            grid-column: span 2;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            button {
+                grid-column: span 1;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Phishing Detection System</h1>
+    <h3>Browser in the Browser</h3>
+
+    <form id="phishing-form">
+        <label for="url">URL Address:</label>
+        <input type="text" id="url" name="URL" placeholder="Enter the URL..." required>
+
+        <label for="is_https">Uses HTTPS?</label>
+        <select id="is_https" name="is_https" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="subdomain_count">Subdomain Count:</label>
+        <input type="number" id="subdomain_count" name="subdomain_count" placeholder="Enter count..." required>
+
+        <label for="window_size">Window Size (e.g., 1920x1080):</label>
+        <input type="text" id="window_size" name="window_size" placeholder="Enter size..." required>
+
+        <label for="button_spacing">Button Spacing:</label>
+        <select id="button_spacing" name="button_spacing" required>
+            <option value="normal">Normal</option>
+            <option value="close">Close</option>
+            <option value="far">Far</option>
+        </select>
+
+        <label for="logo_present">Logo Present?</label>
+        <select id="logo_present" name="logo_present" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="user_interaction">User Interaction:</label>
+        <input type="number" id="user_interaction" name="user_interaction" placeholder="Enter percentage..." required>
+
+        <label for="font_style">Font Style:</label>
+        <select id="font_style" name="font_style" required>
+            <option value="regular">Regular</option>
+            <option value="bold">Bold</option>
+            <option value="inconsistent">Inconsistent</option>
+        </select>
+
+        <label for="image_quality">Image Quality:</label>
+        <select id="image_quality" name="image_quality" required>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+        </select>
+
+        <label for="font_resolution">Font Resolution:</label>
+        <select id="font_resolution" name="font_resolution" required>
+            <option value="clear">Clear</option>
+            <option value="pixelated">Pixelated</option>
+        </select>
+
+        <label for="button_count">Button Count:</label>
+        <input type="number" id="button_count" name="button_count" placeholder="Enter count..." required>
+
+        <label for="button_text">Button Text:</label>
+        <select id="button_text" name="button_text" required>
+            <option value="Sign In">Sign In</option>
+            <option value="Login">Login</option>
+            <option value="Log In">Log In</option>
+            <option value="Reset Password">Reset Password</option>
+            <option value="Verify Account">Verify Account</option>
+            <option value="Account Security">Account Security</option>
+            <option value="Account Recovery">Account Recovery</option>
+            <option value="Billing Information">Billing Information</option>
+        </select>
+
+        <label for="button_position">Button Position:</label>
+        <select id="button_position" name="button_position" required>
+            <option value="top-left">Top Left</option>
+            <option value="center">Center</option>
+        </select>
+
+        <label for="button_size">Button Size:</label>
+        <select id="button_size" name="button_size" required>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+
+        <label for="text_type">Text Type:</label>
+        <select id="text_type" name="text_type" required>
+            <option value="standard">Standard</option>
+            <option value="poor">Poor</option>
+        </select>
+
+        <label for="suspicious_terms">Suspicious Terms:</label>
+        <select id="suspicious_terms" name="suspicious_terms" required>
+            <option value="N/A">None</option>
+            <option value="account recovery">Account Recovery</option>
+            <option value="verify account">Verify Account</option>
+            <option value="reset password">Reset Password</option>
+            <option value="billing information">Billing Information</option>
+        </select>
+
+        <label for="text_formatting">Text Formatting:</label>
+        <select id="text_formatting" name="text_formatting" required>
+            <option value="well-formatted">Well Formatted</option>
+            <option value="poorly-formatted">Poorly Formatted</option>
+        </select>
+
+        <label for="page_load_time">Page Load Time (s):</label>
+        <input type="text" id="page_load_time" name="page_load_time" placeholder="Enter time..." required>
+
+        <label for="button_click_time">Button Click Time (s):</label>
+        <input type="text" id="button_click_time" name="button_click_time" placeholder="Enter time..." required>
+
+        <label for="text_interaction_time">Text Interaction Time (s):</label>
+        <input type="text" id="text_interaction_time" name="text_interaction_time" placeholder="Enter time..." required>
+
+        <button type="submit">Check Now</button>
+    </form>
+
+    <div class="result" id="result"></div>
+<div id="warning-section" style="display:none; color: red; font-weight: bold; margin-top: 10px;">
+    <p id="warning-message"></p>
+</div>
+<div id="suggestions-section" style="display:none; margin-top: 15px; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+    <p><strong>Suggestions for improving security:</strong></p>
+    <ul id="suggestions-list"></ul>
+</div>
+
+<script>
+    document.getElementById("phishing-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        // Collect form data
+        const formData = new FormData(event.target);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        try {
+            // Send data to the server
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            // Update the UI based on the result
+            handlePredictionResult(result);
+        } catch (error) {
+            document.getElementById("result").innerText = "An error occurred during verification!";
+            console.error(error);
+        }
+    });
+
+    function handlePredictionResult(response) {
+        const warningSection = document.getElementById('warning-section');
+        const warningMessage = document.getElementById('warning-message');
+        const suggestionsSection = document.getElementById('suggestions-section');
+        const suggestionsList = document.getElementById('suggestions-list');
+
+        // Reset suggestions content
+        suggestionsList.innerHTML = "";
+        if (response.suggestions) {
+            suggestionsSection.style.display = "block";
+            response.suggestions.forEach((suggestion) => {
+                const li = document.createElement("li");
+                li.textContent = suggestion;
+                suggestionsList.appendChild(li);
+            });
+        } else {
+            suggestionsSection.style.display = "none";
+        }
+
+        // Display warning messages
+        if (response.message.includes("Phishing")) {
+            warningSection.style.display = "block";
+            warningMessage.textContent = "⚠️ Suspicious site detected.";
+        } else {
+            warningSection.style.display = "none";
+        }
+    }
+</script>
+
+    
+    
+</body>
+</html>
+
