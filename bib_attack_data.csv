@@ -1,0 +1,25 @@
+URL,is_https,subdomain_count,window_size,button_spacing,logo_present,user_interaction,is_bib_attack,font_style,image_quality,font_resolution,button_count,button_text,button_position,button_size,text_type,suspicious_terms,text_formatting,page_load_time,button_click_time,text_interaction_time
+https://accounts.google.com,1,1,1024x768,normal,1,30,0,regular,high,clear,3,Sign In,top-left,medium,standard,N/A,well-formatted,1.2s,0.5s,1s
+http://fake-google-login.com,0,2,1024x768,close,0,15,1,inconsistent,blurry,pixelated,5,Login,center,large,poor,Reset Password,poorly-formatted,2.5s,1s,2s
+https://facebook.com/login,1,1,800x600,normal,1,40,0,regular,high,clear,4,Log In,top-left,medium,standard,N/A,well-formatted,1.0s,0.3s,0.8s
+http://facebook-login-secure.com,0,2,800x600,close,0,10,1,inconsistent,low,pixelated,6,Log In,center,large,poor,Verify Account,poorly-formatted,2.0s,1.2s,1.5s
+https://accounts.microsoft.com,1,1,900x700,normal,1,35,0,regular,high,clear,3,Sign In,top-left,medium,standard,N/A,well-formatted,1.3s,0.7s,1s
+http://microsoft-security-login.com,0,3,900x700,close,0,12,1,bold,blurry,pixelated,5,Login,center,large,poor,Account Security,poorly-formatted,2.2s,1.5s,2s
+https://login.twitter.com,1,1,1024x768,normal,1,25,0,regular,high,clear,4,Log In,top-left,medium,standard,N/A,well-formatted,1.1s,0.6s,1s
+http://twitter-login-help.com,0,1,1024x768,far,0,8,1,inconsistent,low,pixelated,5,Login,center,large,poor,Account Recovery,poorly-formatted,2.4s,1.3s,2.1s
+https://secure.paypal.com,1,1,1100x800,normal,1,50,0,regular,high,clear,3,Log In,top-left,medium,standard,N/A,well-formatted,1.0s,0.5s,0.9s
+http://paypal-billing-security.com,0,2,1100x800,close,0,14,1,bold,blurry,pixelated,5,Login,center,large,poor,Billing Information,poorly-formatted,2.6s,1.4s,2.3s
+https://github.com/login,1,1,1000x750,normal,1,45,0,regular,high,clear,4,Sign In,top-left,medium,standard,N/A,well-formatted,1.1s,0.4s,1.2s
+http://github-secure-login.com,0,2,1000x750,close,0,20,1,inconsistent,low,pixelated,5,Log In,center,large,poor,Verify Account,poorly-formatted,2.3s,1.1s,1.9s
+https://amazon.com/signin,1,1,1024x768,normal,1,55,0,regular,high,clear,3,Sign In,top-left,medium,standard,N/A,well-formatted,1.0s,0.6s,1s
+http://amazon-security-account.com,0,3,1024x768,close,0,18,1,bold,blurry,pixelated,5,Login,center,large,poor,Account Verification,poorly-formatted,2.7s,1.2s,2.0s
+https://appleid.apple.com,1,1,900x700,normal,1,38,0,regular,high,clear,3,Sign In,top-left,medium,standard,N/A,well-formatted,1.4s,0.5s,0.8s
+http://apple-account-verification.com,0,2,900x700,close,0,16,1,inconsistent,low,pixelated,5,Login,center,large,poor,Account Verification,poorly-formatted,2.8s,1.6s,2.1s
+https://linkedin.com/login,1,1,850x650,normal,1,42,0,regular,high,clear,4,Sign In,top-left,medium,standard,N/A,well-formatted,1.2s,0.7s,1s
+http://linked-in-secure-login.com,0,1,850x650,far,0,13,1,inconsistent,low,pixelated,5,Login,center,large,poor,Account Recovery,poorly-formatted,2.5s,1.4s,2.2s
+https://dropbox.com/login,1,1,950x700,normal,1,30,0,regular,high,clear,4,Log In,top-left,medium,standard,N/A,well-formatted,1.0s,0.6s,0.9s
+http://dropbox-security-verification.com,0,3,950x700,close,0,9,1,bold,blurry,pixelated,5,Login,center,large,poor,Account Verification,poorly-formatted,2.6s,1.2s,1.8s
+https://instagram.com/accounts/login,1,1,850x650,normal,1,28,0,regular,high,clear,4,Log In,top-left,medium,standard,N/A,well-formatted,1.1s,0.5s,1s
+http://insta-secure-login.com,0,2,850x650,far,0,11,1,inconsistent,low,pixelated,5,Login,center,large,poor,Account Verification,poorly-formatted,2.4s,1.3s,2.0s
+https://web.whatsapp.com,1,1,900x700,normal,1,32,0,regular,high,clear,3,Log In,top-left,medium,standard,N/A,well-formatted,1.3s,0.6s,1s
+http://whatsapp-secure-login.com,0,3,900x700,close,0,7,1,bold,blurry,pixelated,4,Login,center,large,poor,Account Recovery,poorly-formatted,2.7s,1.5s,2.2s
